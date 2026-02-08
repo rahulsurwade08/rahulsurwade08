@@ -1,0 +1,95 @@
+
+/*
+  TEMPLATE STYLES: These styles are used as a base template.
+  Styles should be edited to match the requirements of the project.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* Default Light Theme (Not primarily used but good for fallback) */
+		--background: 0 0% 100%;
+		--foreground: 203 39% 44%; /* #457B9D */
+		--card: 0 0% 100%;
+		--card-foreground: 203 39% 44%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 203 39% 44%;
+		--primary: 203 39% 44%;
+		--primary-foreground: 105 55% 96%; /* #F1FAEE */
+		--secondary: 178 42% 76%; /* #A8DADC */
+		--secondary-foreground: 203 39% 44%;
+		--muted: 178 42% 76%;
+		--muted-foreground: 203 39% 44%;
+		--accent: 356 76% 56%; /* #E63946 */
+		--accent-foreground: 105 55% 96%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 203 39% 44%;
+		--input: 203 39% 44%;
+		--ring: 356 76% 56%;
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		/* Updated Palette - Lighter Blue Theme */
+		/* #457B9D - Steel Blue (Background) */
+		--background: 203 39% 44%; 
+		/* #F1FAEE - Off White (Text) */
+		--foreground: 105 55% 96%; 
+		
+		/* #457B9D - Steel Blue (Card Background) */
+		--card: 203 39% 44%; 
+		--card-foreground: 105 55% 96%;
+		
+		--popover: 203 39% 44%;
+		--popover-foreground: 105 55% 96%;
+		
+		/* #457B9D - Steel Blue */
+		--primary: 203 39% 44%; 
+		--primary-foreground: 105 55% 96%;
+		
+		/* #A8DADC - Light Cyan (Secondary/Accents) */
+		--secondary: 178 42% 76%; 
+		--secondary-foreground: 203 39% 44%;
+		
+		--muted: 178 42% 76%;
+		--muted-foreground: 203 39% 44%;
+		
+		/* #E63946 - Coral Red (CTA/Highlights) */
+		--accent: 356 76% 56%; 
+		--accent-foreground: 105 55% 96%;
+		
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 105 55% 96%;
+		
+		--border: 178 42% 76%;
+		--input: 203 39% 44%;
+		--ring: 356 76% 56%;
+	}
+
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-steel-blue text-off-white;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@layer components {
+	.surface-base {
+		@apply bg-background text-foreground;
+	}
+
+	.surface-elevated {
+		@apply bg-card text-card-foreground border border-border shadow-sm rounded-lg;
+	}
+
+	.transition-default {
+		@apply transition-all duration-200 ease-out;
+	}
+}
